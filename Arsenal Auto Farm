@@ -52,5 +52,3 @@ pcall(function()
           if s.playing ~= s.maxPlayers then
               TPService:TeleportToPlaceInstance(game.PlaceId, s.id)
               wait()
-              rconsoleprint("\n\Killed all the little kids ServerHopped Made By Wolfyz#4785 Enjoy\n")
-         end end end end) end end)
