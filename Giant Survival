@@ -1,0 +1,141 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Giant Survival", "BloodTheme")
+local Tab1 = Window:NewTab("Main")
+local Tab2 = Window:NewTab("Others")
+local Section4 = Tab1:NewSection("Money")
+local Section5 = Tab1:NewSection("Paid Guns")
+local Section6 = Tab1:NewSection("Level Farm")
+local Section8 = Tab2:NewSection("Others")
+
+
+Section4:NewToggle("Auto Add Money", "basically infinite money hehe", function(state)
+if state then
+getgenv().Farming1 = true
+		while Farming1 == true do
+local ohTable1 = {
+	[1] = {
+		[1] = false
+	},
+	[2] = {
+		[1] = 2
+	}
+}
+
+workspace.__THINGS.__REMOTES.currencycollected:FireServer(ohTable1)
+			wait()
+		end
+else
+getgenv().Farming1 = false
+end
+end)
+
+Section4:NewButton("Add Money", "gives u like 200k", function()
+local ohTable1 = {
+	[1] = {
+		[1] = false
+	},
+	[2] = {
+		[1] = 2
+	}
+}
+
+workspace.__THINGS.__REMOTES.currencycollected:FireServer(ohTable1)
+end)
+
+Section5:NewButton("Crazy Futuristic Minigun", "this only works on one gun though", function()
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+local ohTable1 = {
+	[1] = {
+		[1] = "Crazy Futuristic Minigun"
+	},
+	[2] = {
+		[1] = false
+	}
+}
+
+workspace.__THINGS.__REMOTES.weaponequipped:FireServer(ohTable1)
+end)
+
+Section5:NewButton("Black Hole Gun", "this only works on one gun though", function()
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+local ohTable1 = {
+	[1] = {
+		[1] = "Black Hole Gun"
+	},
+	[2] = {
+		[1] = false
+	}
+}
+
+workspace.__THINGS.__REMOTES.weaponequipped:FireServer(ohTable1)
+end)
+
+Section5:NewButton("Golden Pistol", "this only works on one gun though", function()
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+local ohTable1 = {
+	[1] = {
+		[1] = "Golden Pistol"
+	},
+	[2] = {
+		[1] = false
+	}
+}
+
+workspace.__THINGS.__REMOTES.weaponequipped:FireServer(ohTable1)
+end)
+
+Section6:NewToggle("Level Farm", "basically infinite money hehe", function(state)
+if state then
+getgenv().Farming1 = true
+		while Farming1 == true do
+_G.Monster = nil
+local m
+_G.On = true
+function FindM()
+  for i,v in pairs(game.Workspace:GetChildren()) do
+      if v:FindFirstChild("Humanoid") and v.Humanoid:FindFirstChild("HeadScale") then
+          if v.Humanoid.HeadScale.Value > 2 then
+               m = v.Name
+               _G.Monster = m
+           end
+       end
+   end  
+end
+
+while _G.On and wait() do
+       FindM()
+   if m ~= nil then
+function getNil(name,class) for _,v in pairs(getnilinstances())do if v.ClassName==class and v.Name==name then return v;end end end
+
+local args = {
+   [1] = {
+       [1] = {
+           [1] = m,
+           [2] = 20,
+           [3] = 0.010945398251152,
+       },
+       [2] = {
+           [1] = false,
+           [2] = false,
+           [3] = false,
+       },
+   },
+}
+
+workspace["__THINGS"]["__REMOTES"]["giant_dealdamage"]:FireServer(unpack(args))
+   end
+end
+end
+else
+_G.On = false
+getgenv().Farming1 = false
+end
+end)
+
+Section8:NewTextBox("Walkspeed", "Change Your Walkspeed", function(txt)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = txt
+end)
+
+Section8:NewTextBox("Jumppower", "Change Your Jumppower", function(txt)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = txt
+end)
