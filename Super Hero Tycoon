@@ -1,0 +1,129 @@
+local a = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+local b =
+    a.Load(
+    {
+        Title = "Super Hero Tycoon",
+        Style = 1,
+        SizeX = 400,
+        SizeY = 300,
+        Theme = "Dark",
+        ColorOverrides = {MainFrame = Color3.fromRGB(50, 50, 50)}
+    }
+)
+local c = b.New({Title = "Main"})
+local d = b.New({Title = "Credits"})
+c.Toggle(
+    {
+        Text = "Part-Steal",
+        Callback = function(e)
+            PartSteal = e
+        end,
+        Enabled = false
+    }
+)
+c.Toggle(
+    {
+        Text = "Money-Steal",
+        Callback = function(e)
+            MoneySteal = e
+        end,
+        Enabled = false
+    }
+)
+c.Button(
+    {
+        Text = "Gear-Steal",
+        Callback = function()
+            for f, g in pairs(game:GetService("Workspace"):GetDescendants()) do
+                if g.Name == "Giver" then
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, g, 0)
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, g, 1)
+                end
+            end
+        end
+    }
+)
+c.Button(
+    {
+        Text = "Laser-Destroy",
+        Callback = function()
+            for f, g in pairs(game:GetService("Workspace"):GetDescendants()) do
+                if g.Name == "Pipe" then
+                    g:Destroy()
+                end
+            end
+        end
+    }
+)
+d.Button(
+    {
+        Text = "                                   Wolfyz#4785",
+        Callback = function()
+            psetclipboard("Wolfyz#4785")
+        end
+    }
+)
+d.Button(
+    {
+        Text = "                      https://discord.gg/4BTSaSFU9R",
+        Callback = function()
+            psetclipboard("https://discord.gg/4BTSaSFU9R")
+        end
+    }
+)
+d.Button(
+    {
+        Text = "                                   Wolfyz#6969",
+        Callback = function()
+            psetclipboard("Wolfyz#6969")
+        end
+    }
+)
+d.Button(
+    {
+        Text = "                      https://discord.gg/4BTSaSFU9R",
+        Callback = function()
+            psetclipboard("https://discord.gg/4BTSaSFU9R")
+        end
+    }
+)
+while wait() do
+    if PartSteal == true then
+        for f, g in pairs(game.workspace:GetDescendants()) do
+            if g.Name == "Owner" then
+                if g.Value == game:GetService("Players").LocalPlayer then
+                    for f, h in pairs(g.Parent:GetChildren()) do
+                        for f, i in pairs(h:GetChildren()) do
+                            if h.Name == "Essentials" then
+                                if i.Name == "PartCollector" then
+                                    for f, j in pairs(i:GetChildren()) do
+                                        if j.Name == "Extra" then
+                                            for f, k in pairs(game:GetService("Workspace").PartStorage:GetChildren()) do
+                                                k.CFrame = CFrame.new(j.CFrame.Position + Vector3.new(0, 2, 0))
+                                                k.CanCollide = false
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+    if MoneySteal == true then
+        for f, g in pairs(game:GetService("Workspace").Tycoons.Tycoons:GetChildren()) do
+            for f, h in pairs(g:GetChildren()) do
+                if h.Name == "Essentials" then
+                    for f, i in pairs(h:GetChildren()) do
+                        if i.Name == "Giver" then
+                            firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, i, 0)
+                            firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, i, 1)
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
