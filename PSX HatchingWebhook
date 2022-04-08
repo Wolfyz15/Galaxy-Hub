@@ -1,0 +1,11 @@
+_G.Webhook = "https://discord.com/api/webhooks/962042753456418956/bc6jXMYQ4zOJ-69RLpDllPODz5KXRz_i-CvU2T4GP2jL-sn9YzSPyK2t8ZYjjZPYfnb9" --Enter your webpage URL or Disord Webhook URL between the parentheses
+_G.TrackList = {
+   ['Basic'] = false;  --Change these to true for pets you want to see hatches of
+   ['Rare'] = false;
+   ['Epic'] = false;
+   ['Legendary'] = false;
+   ['Mythical'] = true;
+   ['Exclusive'] = true;
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Phasmas/Roblox/main/Hatch%20Webhook.txt"))()
